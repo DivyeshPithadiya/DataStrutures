@@ -1,9 +1,9 @@
 package Sorting;
+import java.util.Scanner;
 
 public class BubbleSort 
 {
-	
-	public static void sort(int[] a)
+	public static int[] sort(int[] a)
 	{
 		for(int i=0;i<a.length;i++)
 		{
@@ -11,25 +11,40 @@ public class BubbleSort
 			{
 				if(a[j]>a[j+1])
 				{
-					int temp=a[j];
+					// swap 
+					
+					int temp =a[j];
 					a[j]=a[j+1];
 					a[j+1]=temp;
+
 				}
 			}
 		}
 		
-		System.out.println("Sorted Array is : ");
 		
-		for(int i=0;i<a.length;i++)
-		{
-			System.out.print(a[i]+" ");
-		}
+		return a;
 	}
 	
 	public static void main(String args[])
 	{
-		int[] a= {34,54,12,65,11,78,32};
-		sort(a);
+		Scanner s=new Scanner(System.in);
+		
+		System.out.print("Enter Array Elements : ");
+		int[] a=new int[5];
+		
+		for(int i=0;i<5;i++)
+		{
+			a[i]=s.nextInt();
+		}
+		
+		int[] b=sort(a);
+		
+		for(int i=0;i<5;i++)
+		{
+			System.out.print(b[i]+" ");
+		}
+		
+		
 	}
 
 }
